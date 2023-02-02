@@ -1,0 +1,24 @@
+body
+{
+
+    background-color: rgb(171, 225, 226);
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+p{
+    font-size: large;
+    text-decoration-style: solid;
+}
+
+
+.about{
+    text-align: center;
+    color: rgb(32, 15, 118);
+}
+.button{
+    background-color: black;
+}
+.card{
+    background-color: blanchedalmond;
+}

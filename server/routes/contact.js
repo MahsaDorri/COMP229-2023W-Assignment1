@@ -18,7 +18,7 @@ function requireAuth(req,res,next)
     next();
 }
 //connect to our contact model
-let contact = require('../model/contacts');
+let contact = require('../model/contact');
 //let contactController = require('../controllers/contact');
 //GET ROUTE for the contact list page - READ OPERATION
 router.get('/',contactController.displaycontactList);

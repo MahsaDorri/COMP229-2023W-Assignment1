@@ -15,8 +15,10 @@ let flash = require('connect-flash');
 
 let mongoose = require('mongoose');
 let db=require('./db');
+mongoose.set('strictQuery', false);
+
 //point mongoose to the db URI
-mongoose.connect(db.URI, {useNewUrlparser: true, useUnifiedTopology: true});// in doroste?
+mongoose.connect(db.URI);// in doroste?
 let mongoDB = mongoose.connection;
 mongoDB.on('error',console.error.bind(console,'connection Error:'));
 mongoDB.once('open',()=>{
@@ -49,7 +51,7 @@ app.use(session({
 
   //resave:false
 
-  reSave:false
+  resave:false
 }));
 
 //initialize flash

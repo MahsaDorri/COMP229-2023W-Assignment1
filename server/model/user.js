@@ -8,7 +8,7 @@ let user = mongoose.Schema
         username:
         {
             type:String,
-            default:"",
+            default:'',
             trim:true,
             required:'username is required'
         },

@@ -20,9 +20,9 @@
              </tr>
              <%for(let count =0; count <contactList.length; count++){%>
                  <tr>
-                     <td class = "text-center col-2"><%=contactList[count].cname%></td>
+                     <td class = "text-center col-2"><%=contactList[count].name%></td>
                      <td class = "text-center col-2"><%=contactList[count].email%></td>
-                     <td class = "text-center col-1"><%=contactList[count].cnumber%></td>
+                     <td class = "text-center col-1"><%=contactList[count].number%></td>
                      
                      <td class="text-center col-1">
                         <a href="/contactlist/edit/<%=contactList[count]._id%>" class="btn btn-primary btn-sm">

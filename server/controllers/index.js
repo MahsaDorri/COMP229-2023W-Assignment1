@@ -7,21 +7,24 @@ let passport = require('passport');
 let UserModel = require('../model/user');
 let User = UserModel.User; //alias
 module.exports.displayHomePage = (req,res,next)=>{
-    res.render('index',{title:'Home', displayName:req.user?req.user.displayName:''});
+    res.render('index',{title:'Home', displayName: req.user ? req.user.displayName :''});
 }
 
 module.exports.displayAboutPage = (req,res,next)=>{
-    res.render('about',{title:'About', displayName:req.user?req.user.displayName:''});
+    res.render('../views/partials/about',{title:'About', displayName: req.user ? req.user.displayName :''});
 }
 
 module.exports.displayProductsPage = (req,res,next)=>{
-    res.render('Projects',{title:'Projects',displayName:req.user?req.user.displayName:''});
+    res.render('../views/partials/Projects',{title:'Projects',displayName: req.user ? req.user.displayName :''});
 }
 module.exports.displayServicesPage = (req,res,next)=>{
-    res.render('Services',{title:'Services',displayName:req.user?req.user.displayName:''});
+    res.render('../views/partials/Services',{title:'Services',displayName: req.user ? req.user.displayName :''});
 }
 module.exports.displayContactPage = (req,res,next)=>{
-    res.render('Contact',{title:'Contact', displayName:req.user?req.user.displayName:''});
+    res.render('../views/partials/Contact',{title:'Contact', displayName:req.user ? req.user.displayName :''});
+}
+module.exports.displayContactPage = (req,res,next)=>{
+    res.render('../views/partials/Contactlist',{title:'Contactlist', displayName:req.user ? req.user.displayName :''});
 }
 module.exports.displayLoginPage = (req,res,next)=>{
     //check if the user is already logged in

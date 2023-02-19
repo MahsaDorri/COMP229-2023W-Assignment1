@@ -3,7 +3,7 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 //create a refrence to the model
-let contact = require('../model/contacts');
+let contact = require('../model/contact');
 module.exports.displaycontactList = (req,res,next)=>{
     contact.find((err,contactList)=>{
         if(err)
@@ -38,7 +38,7 @@ module.exports.processAddPage = (req,res,next)=>{
         }
         else
         {
-        res.redirect('/contactList');
+        res.redirect('/contactlist');
         }
     });
 }

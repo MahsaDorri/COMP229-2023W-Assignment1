@@ -24,7 +24,7 @@ module.exports.displayContactPage = (req,res,next)=>{
     res.render('../views/partials/Contact',{title:'Contact', displayName:req.user ? req.user.displayName :''});
 }
 module.exports.displayContactPage = (req,res,next)=>{
-    res.render('../views/partials/Contactlist',{title:'Contactlist', displayName:req.user ? req.user.displayName :''});
+    res.render('../views/partials/Contacts',{title:'Contacts', displayName:req.user ? req.user.displayName :''});
 }
 module.exports.displayLoginPage = (req,res,next)=>{
     //check if the user is already logged in
@@ -64,7 +64,7 @@ module.exports.processLoginPage = (req, res, next)=>{
             {
                 return next(err);
             }
-            return res.redirect('/contactList');
+            return res.redirect('/contactlist');
         });
         
     })(req, res, next);
@@ -120,7 +120,7 @@ module.exports.processRegisterPage = (req, res, next)=>{
             // redirect the user and authenticate them
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/contactList')
+                res.redirect('/contactlist')
             });
         }
     });

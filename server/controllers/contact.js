@@ -4,16 +4,16 @@ let router = express.Router();
 let mongoose = require('mongoose');
 //create a refrence to the model
 let contact = require('../model/contact');
-module.exports.displaycontactList = (req,res,next)=>{
-    contact.find((err,contactList)=>{
+module.exports.displaycontactlist = (req,res,next)=>{
+    contact.find((err,contactlist)=>{
         if(err)
         {
         return console.error(err);
         }
         else
         {
-         //console.log(contactList);
-         res.render('contact/list', {title:'contacts', contactList:contactList});
+         //console.log(contactlist);
+         res.render('contact/list', {title:'contacts', contactlist:contactlist});
         }
     });
 }
@@ -77,7 +77,7 @@ module.exports.processEditPage = (req,res,next)=>{
         }
         else
         {
-            res.redirect('/contactList');
+            res.redirect('/contactlist');
         }
     });
 }
@@ -92,7 +92,7 @@ module.exports.performDelete= (req,res,next)=>{
         }
         else
         {
-            res.redirect('/contactList');
+            res.redirect('/contactlist');
         }
     });
 }

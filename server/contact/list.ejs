@@ -18,17 +18,17 @@
                 
                  <th class="text-content col-1">Contact Number</th>
              </tr>
-             <%for(let count =0; count <contactList.length; count++){%>
+             <%for(let count =0; count <contactlist.length; count++){%>
                  <tr>
-                     <td class = "text-center col-2"><%=contactList[count].name%></td>
-                     <td class = "text-center col-2"><%=contactList[count].email%></td>
-                     <td class = "text-center col-1"><%=contactList[count].number%></td>
+                     <td class = "text-center col-2"><%=contactlist[count].name%></td>
+                     <td class = "text-center col-2"><%=contactlist[count].email%></td>
+                     <td class = "text-center col-1"><%=contactlist[count].number%></td>
                      
                      <td class="text-center col-1">
-                        <a href="/contactlist/edit/<%=contactList[count]._id%>" class="btn btn-primary btn-sm">
+                        <a href="/contactlist/edit/<%=contactlist[count]._id%>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i>Edit</a></td>
 
-                     <td class="text-center col-1"><a href="/contactlist/delete/<%=contactList[count]._id%>" class="btn btn-danger btn-sm">
+                     <td class="text-center col-1"><a href="/contactlist/delete/<%=contactlist[count]._id%>" class="btn btn-danger btn-sm">
                         <i class="fas fa-trash-alt"></i>Delete</a></td>
                  </tr>
                  <%}%>

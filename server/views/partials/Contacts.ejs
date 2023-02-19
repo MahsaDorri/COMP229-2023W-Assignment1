@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+<%- include('partials/main_nav'); -%>
+  
+<h1 class="container-fluid text-center text-white" id="tbl"><%= title %></h1>
+ 
+<p class="container-fluid text-center text-dark text-capitalize" id="tbl">Fill in the <%= title %> form below</p>
+
+
+<form action="/Contacts">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm" id="contactDiv">
+         <input type="text" id="fname" name="fname" placeholder="First Name:">
+         <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+         <input type="email" id="email" name="email" placeholder="Email" size="45"><br><br>
+         <textarea id="msg" name="msg" rows="4" cols="50">
+            Write your message here.
+         </textarea>
+         <br>
+         <input type="submit" value="Submit">
+      </div>
+      </div>
+   </div>
+   </div>
+
+ </form>
+
+   <%-include ('partials/bottom_nav.ejs');%>
+<%-include ('partials/footer.ejs');%>   

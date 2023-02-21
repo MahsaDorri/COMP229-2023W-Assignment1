@@ -19,7 +19,7 @@ router.get('/',indexController.displayProductsPage);
 /* GET contact page. */
 router.get('/contact', indexController.displayContactPage);
 
-router.get('/Contacts', indexController.displaycontactlistPage);
+
 
 
 /* GET services page. */

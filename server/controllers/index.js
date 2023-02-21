@@ -23,9 +23,7 @@ module.exports.displayServicesPage = (req,res,next)=>{
 module.exports.displayContactPage = (req,res,next)=>{
     res.render('../views/partials/Contact',{title:'Contact', displayName:req.user ? req.user.displayName :''});
 }
-module.exports.displayContactPage = (req,res,next)=>{
-    res.render('../views/partials/Contacts',{title:'Contacts', displayName:req.user ? req.user.displayName :''});
-}
+
 module.exports.displayLoginPage = (req,res,next)=>{
     //check if the user is already logged in
     if(!req.user)
@@ -64,7 +62,7 @@ module.exports.processLoginPage = (req, res, next)=>{
             {
                 return next(err);
             }
-            return res.redirect('/contactlist');
+            return res.redirect('/contact-list');
         });
         
     })(req, res, next);
@@ -120,7 +118,7 @@ module.exports.processRegisterPage = (req, res, next)=>{
             // redirect the user and authenticate them
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/contactlist')
+                res.redirect('/contact-list')
             });
         }
     });
@@ -128,7 +126,7 @@ module.exports.processRegisterPage = (req, res, next)=>{
 module.exports.performLogout = (req, res, next) => {
     req.logout(function(err) {
         if (err) { return next(err); }
-        res.redirect('/');
+        res.redirect("/");
       });
     //res.redirect('/');
 }

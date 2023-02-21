@@ -18,7 +18,7 @@ let db=require('./db');
 mongoose.set('strictQuery', false);
 
 //point mongoose to the db URI
-mongoose.connect(db.URI);// in doroste?
+mongoose.connect(db.URI,{useNewUrlParser: true});// in doroste?
 let mongoDB = mongoose.connection;
 mongoDB.on('error',console.error.bind(console,'connection Error:'));
 mongoDB.once('open',()=>{
@@ -79,7 +79,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contactList',contactsRouter) // ya inja bashe shayad??????
+app.use('/contact-list',contactsRouter); // ya inja bashe shayad??????
 
 
 // catch 404 and forward to error handler

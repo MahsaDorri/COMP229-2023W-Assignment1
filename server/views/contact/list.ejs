@@ -7,7 +7,7 @@
  <div class="row">
      <div class="col-md-offset-3 col md-8">
          <h1><%= title %></h1>
-         <a href="/contactlist/add" class="btn btn-primary" role="button">
+         <a href="/contact-list/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i>Add a contact</a>
          <br>
          
@@ -25,10 +25,10 @@
                      <td class = "text-center col-1"><%=contactlist[count].number%></td>
                      
                      <td class="text-center col-1">
-                        <a href="/contactlist/edit/<%=contactlist[count]._id%>" class="btn btn-primary btn-sm">
+                        <a href="/contact-list/edit/<%=contactlist[count]._id%>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i>Edit</a></td>
 
-                     <td class="text-center col-1"><a href="/contactlist/delete/<%=contactlist[count]._id%>" class="btn btn-danger btn-sm">
+                     <td class="text-center col-1"><a href="/contact-list/delete/<%=contactlist[count]._id%>" class="btn btn-danger btn-sm">
                         <i class="fas fa-trash-alt"></i>Delete</a></td>
                  </tr>
                  <%}%>

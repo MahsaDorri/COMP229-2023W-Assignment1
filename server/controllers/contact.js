@@ -4,7 +4,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 //create a refrence to the model
 let contact = require('../model/contact');
-module.exports.displaycontactlist = (req,res,next)=>{
+module.exports.displayContactList = (req ,res, next) => {
     contact.find((err,contactlist)=>{
         if(err)
         {
@@ -13,13 +13,13 @@ module.exports.displaycontactlist = (req,res,next)=>{
         else
         {
          //console.log(contactlist);
-         res.render('contact/list', {title:'contacts', contactlist:contactlist});
+         res.render('contact/list', {title:'Contact List', ContactList: ContactList});
         }
-    });
+    }).sort({name :1});
 }
 
 module.exports.displayAddPage = (req,res,next)=>{
-    res.render('contact/add',{title:'Add contact'})
+    res.render('contact/add',{title:'Add contact', displayName: req.user ? req.user.displayName : ''});
 
 }
 
@@ -38,7 +38,7 @@ module.exports.processAddPage = (req,res,next)=>{
         }
         else
         {
-        res.redirect('/contactlist');
+            res.redirect('/contact-list');
         }
     });
 }
@@ -53,15 +53,15 @@ module.exports.displayEditPage = (req,res,next)=>{
         }
         else
         {
-            res.render('contact/edit',{title:'Edit contact', contact: contactToEdit});
-            
+            res.render('contact/edit',{title:'Edit contact', contact: contactToEdit,
+            displayName: req.user ? req.user.displayName : ''});            
         }
     });
 }
 
 module.exports.processEditPage = (req,res,next)=>{
     let id = req.params.id
-    console.log(req.body);
+ 
     let updatedcontact = contact({
         "_id":id,
         "name":req.body.name,
@@ -77,7 +77,7 @@ module.exports.processEditPage = (req,res,next)=>{
         }
         else
         {
-            res.redirect('/contactlist');
+            res.redirect('/contact-list');
         }
     });
 }
@@ -92,7 +92,7 @@ module.exports.performDelete= (req,res,next)=>{
         }
         else
         {
-            res.redirect('/contactlist');
+            res.redirect('/contact-list');
         }
     });
 }

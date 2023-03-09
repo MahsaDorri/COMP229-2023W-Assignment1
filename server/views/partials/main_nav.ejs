@@ -21,7 +21,7 @@
           <li class="nav-item">
               <% if (title == "Home"){%>
                 <a class="nav-link active" href="/home">
-                <%} else {%>
+                <% } else { %>
                 <a class="nav-link" href="/home">
                 <% } %>
                 <i class="fa-solid fa-lg fa-house-laptop"></i> Home</a>
@@ -30,16 +30,16 @@
           <li class="nav-item">
             <% if (title == "About"){%>
               <a class="nav-link active" href="/about">
-              <%} else {%>
+              <% } else { %>
               <a class="nav-link" href="/about">
               <% } %>
               <i class="fa-solid fa-circle-info"></i> About</a>
-        </li>
+          </li>
           
           <li class="nav-item">
                 <% if (title == "Projects"){%>
                   <a class="nav-link active" href="/projects">
-                  <%} else {%>
+                  <% } else { %>
                   <a class="nav-link" href="/projects">
                    <% } %>
                   <i class="fa-brands fa-elementor"></i>Projects</a>                      
@@ -63,6 +63,22 @@
               <i class="fa-solid fa-gears"></i> Services</a>                      
           </li>
 
-          </ul>
-    </div>
+          <li class="nav-item">
+            <% if (title == "Books"){%>
+              <a class="nav-link active" href="/book-list">
+              <%} else {%>
+              <a class="nav-link" href="/book-list">
+               <% } %>
+              <i class="fa-solid fa-book"></i>Books</a>                      
+          </li>
+        </ul>
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text text-warning"><i class="fas fa-lg fa-user text-warning"></i> Welcome, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link text-warning">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link text-warning">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <% } %>
+     </div>
   </nav>
